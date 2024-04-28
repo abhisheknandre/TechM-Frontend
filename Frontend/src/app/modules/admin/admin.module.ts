@@ -19,6 +19,7 @@ import { VehicleUnderserviceComponent } from './components/vehicle-underservice/
 import { UpdateStatusComponent } from './components/update-status/update-status.component';
 import { AddItemComponent } from './components/add-item/add-item.component';
 import { VehicleServiceDoneComponent } from './components/vehicle-service-done/vehicle-service-done.component';
+import { InvoiceComponent } from './components/invoice/invoice.component';
 
 
 @NgModule({
@@ -33,7 +34,8 @@ import { VehicleServiceDoneComponent } from './components/vehicle-service-done/v
     VehicleUnderserviceComponent,
     UpdateStatusComponent,
     AddItemComponent,
-    VehicleServiceDoneComponent
+    VehicleServiceDoneComponent,
+    InvoiceComponent
   ],
   imports: [
     CommonModule,

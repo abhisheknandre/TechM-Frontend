@@ -75,6 +75,7 @@ export class AdvisorItemlistComponent {
 
         });
     }
+    this.cartService.clearCart();
     this.router.navigate(['/advisor-dashboard/advisorDashboard/advisorvehicle']);
   }
   

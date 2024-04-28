@@ -22,7 +22,7 @@
               <td>{{ vehicle.licensePlate }}</td>
               <td>{{ vehicle.serviceStatus }}</td>
               <td>
-                  <button (click)="updateVehicle(vehicle.id)" class="btn btn-info">Update</button>
+                  <button routerLink="/admin-dashboard/invoice" routerLinkActive="active" class="btn btn-info">Print Bill</button>
               </td>
             </tr>
           </tbody>

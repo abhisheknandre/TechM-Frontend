@@ -11,6 +11,7 @@ import { VehicleUnderserviceComponent } from './components/vehicle-underservice/
 import { UpdateStatusComponent } from './components/update-status/update-status.component';
 import { AddItemComponent } from './components/add-item/add-item.component';
 import { VehicleServiceDoneComponent } from './components/vehicle-service-done/vehicle-service-done.component';
+import { InvoiceComponent } from './components/invoice/invoice.component';
 
 const routes: Routes = [
   {path: 'adminDashboard', component:AdmindashboardComponent},
@@ -23,7 +24,8 @@ const routes: Routes = [
   {path:'under-service', component: VehicleUnderserviceComponent},
   {path:'upadte-status/:id', component: UpdateStatusComponent},
   {path:'additem',component: AddItemComponent},
-  {path:'service-done', component: VehicleServiceDoneComponent}
+  {path:'service-done', component: VehicleServiceDoneComponent},
+  {path:'invoice', component: InvoiceComponent}
 ];
 
 @NgModule({
