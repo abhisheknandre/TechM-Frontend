@@ -5,4 +5,5 @@ export class Vehicle {
     licensePlate: string;
     serviceStatus: string;
     saEmail: string;
+    oemail:string;
 }

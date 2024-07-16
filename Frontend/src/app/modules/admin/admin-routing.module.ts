@@ -25,7 +25,7 @@ const routes: Routes = [
   {path:'upadte-status/:id', component: UpdateStatusComponent},
   {path:'additem',component: AddItemComponent},
   {path:'service-done', component: VehicleServiceDoneComponent},
-  {path:'invoice', component: InvoiceComponent}
+  {path:'invoice/:id', component: InvoiceComponent}
 ];
 
 @NgModule({

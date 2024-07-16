@@ -3,6 +3,7 @@ import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { Vehicle } from './vehicle';
 import { Item } from './item';
+import { CartItem } from './cart-item';
 
 @Injectable({
   providedIn: 'root'
@@ -101,6 +102,10 @@ export class VehicleserviceService {
     });
 
     return this.httpClient.put(`${this.baseURL}/vehicle/status/bystatus/${id}`, vehicle, { headers });
+  }
+
+  getItemsById(id: number): Observable<CartItem[]>{
+    return this.httpClient.get<CartItem[]>(`${this.baseURL}/cart/getById/${id}`);
   }
 
 

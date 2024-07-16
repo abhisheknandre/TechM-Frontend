@@ -22,11 +22,13 @@
               <td>{{ vehicle.licensePlate }}</td>
               <td>{{ vehicle.serviceStatus }}</td>
               <td>
-                  <button routerLink="/admin-dashboard/invoice" routerLinkActive="active" class="btn btn-info">Print Bill</button>
+                  <button (click)="printBill(vehicle.id)" class="btn btn-info">Print Bill</button>
               </td>
             </tr>
           </tbody>
         </table>
-        <button routerLink="/admin-dashboard/dashboard" routerLinkActive="active" class="text-center btn btn-primary" style="background-color: #673ab7;">Back</button>
+        <div class="button-container">
+          <button routerLink="/admin-dashboard/dashboard" routerLinkActive="active" class="text-center btn btn-primary" style="background-color: #673ab7;">Back</button>
+      </div>
       </div>
     </app-admindashboard>

@@ -9,6 +9,7 @@ import { ToastrService } from 'ngx-toastr';
   styleUrl: './update-status.component.css'
 })
 export class UpdateStatusComponent {
+  
 
   AdvisorList: any[];
   id: any;

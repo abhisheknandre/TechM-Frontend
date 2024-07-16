@@ -28,3 +28,7 @@
 .card {
     max-width: 370px; /* Adjust the width as needed */
 }
+
+.container {
+    padding-top: 20px; /* Adjust as needed */
+}

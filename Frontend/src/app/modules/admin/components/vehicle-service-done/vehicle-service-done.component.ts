@@ -26,6 +26,9 @@ export class VehicleServiceDoneComponent {
     });
   }
 
+  printBill(id: number){
+    this.router.navigate(['/admin-dashboard/invoice', id]);
+  }
   
 
   

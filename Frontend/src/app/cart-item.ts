@@ -1,5 +1,6 @@
 export class CartItem {
-
     id: number;
-    quantity: number
+    itemName: string;
+    quantity: number;
+    itemCost: number;
 }

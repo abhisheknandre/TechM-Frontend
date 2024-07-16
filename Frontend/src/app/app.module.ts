@@ -21,6 +21,7 @@ import { ForgetpasswordComponent } from './components/forgetpassword/forgetpassw
 import { LoginComponent } from './components/login/login.component';
 import { RegisterComponent } from './components/register/register.component';
 import { provideAnimationsAsync } from '@angular/platform-browser/animations/async';
+import { NgxPrintModule } from 'ngx-print';
 
 
 @NgModule({
@@ -40,7 +41,7 @@ import { provideAnimationsAsync } from '@angular/platform-browser/animations/asy
     NgFor,
     BrowserAnimationsModule,
     ToastrModule.forRoot({
-      timeOut: 800,
+      timeOut: 1500,
       positionClass: 'toast-bottom-right',
       preventDuplicates: true,
     }),
@@ -48,7 +49,8 @@ import { provideAnimationsAsync } from '@angular/platform-browser/animations/asy
     MatSidenavModule,
     MatListModule,
     MatIconModule,
-    MatButtonModule
+    MatButtonModule,
+    NgxPrintModule
   ],
   providers: [
     provideClientHydration(),
