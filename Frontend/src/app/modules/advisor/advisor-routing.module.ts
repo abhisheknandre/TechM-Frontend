@@ -4,9 +4,10 @@ import { AdvisordashboardComponent } from './components/advisordashboard/advisor
 import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { AdvisorItemlistComponent } from './components/advisor-itemlist/advisor-itemlist.component';
 import { AdvisorVehiclelistComponent } from './components/advisor-vehiclelist/advisor-vehiclelist.component';
+import { authGuard } from '../../auth.guard';
 
 const routes: Routes = [
-  {path: 'advisorDashboard', component:DashboardComponent,
+  {path: 'advisorDashboard', component:DashboardComponent, canActivate:[authGuard],
     children: [
       {path:'advisoritems/:id', component:AdvisorItemlistComponent},
       {path:'advisorvehicle', component:AdvisorVehiclelistComponent}

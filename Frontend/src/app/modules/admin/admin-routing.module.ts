@@ -12,20 +12,21 @@ import { UpdateStatusComponent } from './components/update-status/update-status.
 import { AddItemComponent } from './components/add-item/add-item.component';
 import { VehicleServiceDoneComponent } from './components/vehicle-service-done/vehicle-service-done.component';
 import { InvoiceComponent } from './components/invoice/invoice.component';
+import { authGuard } from '../../auth.guard';
 
 const routes: Routes = [
-  {path: 'adminDashboard', component:AdmindashboardComponent},
-  {path:'dashboard', component:DashboardComponent},
-  {path:'add-vehicles',component:AddvehicleComponent},
-  {path:'vehicle-list',component:VehicleListComponent},
-  {path:'update-vehicle/:id',component:UpdateVehicleComponent},
-  {path:'item',component:ItemComponent},
-  {path:'update-item/:id',component:UpdateItemComponent},
-  {path:'under-service', component: VehicleUnderserviceComponent},
-  {path:'upadte-status/:id', component: UpdateStatusComponent},
-  {path:'additem',component: AddItemComponent},
-  {path:'service-done', component: VehicleServiceDoneComponent},
-  {path:'invoice/:id', component: InvoiceComponent}
+  {path: 'adminDashboard', component:AdmindashboardComponent, canActivate:[authGuard]}, 
+  {path:'dashboard', component:DashboardComponent , canActivate:[authGuard]},
+  {path:'add-vehicles',component:AddvehicleComponent , canActivate:[authGuard]},
+  {path:'vehicle-list',component:VehicleListComponent, canActivate:[authGuard]},
+  {path:'update-vehicle/:id',component:UpdateVehicleComponent, canActivate:[authGuard]},
+  {path:'item',component:ItemComponent, canActivate:[authGuard]},
+  {path:'update-item/:id',component:UpdateItemComponent, canActivate:[authGuard]},
+  {path:'under-service', component: VehicleUnderserviceComponent, canActivate:[authGuard]},
+  {path:'upadte-status/:id', component: UpdateStatusComponent, canActivate:[authGuard]},
+  {path:'additem',component: AddItemComponent, canActivate:[authGuard]},
+  {path:'service-done', component: VehicleServiceDoneComponent, canActivate:[authGuard]},
+  {path:'invoice/:id', component: InvoiceComponent, canActivate:[authGuard]}
 ];
 
 @NgModule({

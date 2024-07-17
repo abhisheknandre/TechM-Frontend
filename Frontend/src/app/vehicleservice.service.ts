@@ -1,9 +1,10 @@
 import { HttpClient, HttpHeaders } from '@angular/common/http';
-import { Injectable } from '@angular/core';
+import { Inject, Injectable, PLATFORM_ID } from '@angular/core';
 import { Observable } from 'rxjs';
 import { Vehicle } from './vehicle';
 import { Item } from './item';
 import { CartItem } from './cart-item';
+import { isPlatformBrowser } from '@angular/common';
 
 @Injectable({
   providedIn: 'root'
@@ -21,7 +22,7 @@ export class VehicleserviceService {
 
   private baseURL = "http://localhost:8081"
 
-  constructor(private httpClient: HttpClient) { }
+  constructor(private httpClient: HttpClient, @Inject(PLATFORM_ID) private platformId: Object) { }
 
   login(email: string, password: string): Observable<any> {
     const body = { email, password };
@@ -30,6 +31,20 @@ export class VehicleserviceService {
   register(name: string, email: string, password: string, role: string): Observable<any> {
     const body = { name, email, password, role };
     return this.httpClient.post(`${this.baseURL}/user/signup`, body);
+  }
+
+  isAuthenticated(): boolean {
+    if (isPlatformBrowser(this.platformId)) {
+      return !!localStorage.getItem('token');
+    }
+    return false;
+  }
+
+  getUserRole(): string | null {
+    if (isPlatformBrowser(this.platformId)) {
+      return localStorage.getItem('userRole');
+    }
+    return null;
   }
   
 
