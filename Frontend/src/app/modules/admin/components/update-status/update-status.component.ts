@@ -14,7 +14,7 @@ export class UpdateStatusComponent {
   AdvisorList: any[];
   id: any;
   vehicle: any;
-
+  
   constructor(private service:VehicleserviceService, private route : ActivatedRoute, private router: Router, private toastr: ToastrService){}
 
   ngOnInit(): void{
@@ -24,6 +24,7 @@ export class UpdateStatusComponent {
     this.id = this.route.snapshot.params['id'];
     this.service.getVehicleById(this.id).subscribe((data:any )=>{
       this.vehicle = data;
+      this.vehicle.serviceStatus = "Scheduled"
       console.log(data);
     });
   }
@@ -38,7 +39,7 @@ export class UpdateStatusComponent {
   }
 
   gotoList(){
-    this.router.navigate(['/admin-dashboard/vehicle-list']);
+    this.router.navigate(['/admin-dashboard/dashboard']);
   }
 
 }

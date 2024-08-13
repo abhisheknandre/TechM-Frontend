@@ -1,17 +1,19 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { VehicleserviceService } from '../../vehicleservice.service';
 import { Router } from '@angular/router';
+import { ToastrService } from 'ngx-toastr';
 
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
   styleUrls: ['./login.component.css']
 })
-export class LoginComponent {
+export class LoginComponent implements OnInit {
   email: string = '';
   password: string = '';
+  loginError: boolean = false; // Add this property to track login error
 
-  constructor(private authService: VehicleserviceService, private router: Router) {}
+  constructor(private authService: VehicleserviceService, private router: Router, private toastr: ToastrService) {}
 
   ngOnInit(): void {
     // Check if localStorage is available before accessing it
@@ -43,20 +45,19 @@ export class LoginComponent {
 
         const userRole = response.role;
         if (userRole === 'ADMIN') {
+          this.toastr.success('Login successfully', '');
           this.router.navigate(['/admin-dashboard/dashboard']);
           console.log('admin');
         } else if (userRole === 'SERVICEADVISOR') {
+          this.toastr.success('Login successfully', '');
           this.router.navigate(['/advisor-dashboard/advisorDashboard/advisorvehicle']);
           console.log('service');
         } else {
           // Handle invalid role or other error cases
           console.error('Invalid role received:', userRole);
-          // You can display an error message or redirect to a login error page
+          this.toastr.error('Invalid role received', 'Login Error');
         }
-      },
-      (error) => {
-        // Handle login errors (e.g., display error message)
-        console.error('Login error:', error);
+        this.loginError = false; // Reset login error on successful login
       }
     );
   }

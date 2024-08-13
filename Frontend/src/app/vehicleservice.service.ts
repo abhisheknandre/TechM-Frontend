@@ -63,6 +63,9 @@ export class VehicleserviceService {
   getVehicleList3(): Observable<Vehicle[]>{
     return this.httpClient.get<Vehicle[]>(`${this.baseURL}/vehicle/getByServiceStatus/Completed`);
   }
+  getVehicleList4(): Observable<Vehicle[]>{
+    return this.httpClient.get<Vehicle[]>(`${this.baseURL}/vehicle/getByServiceStatus/Due`);
+  }
   deleteVehicle(id: number): Observable<Object>{
     return this.httpClient.delete(`${this.baseURL}/vehicle/delete/${id}`);
   }

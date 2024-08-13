@@ -48,7 +48,7 @@
                 </div>
             </div>
             <div class="col m-1">
-                <button class="btn btn-danger" (click)="removeItem(item.id)" style="">Delete</button>
+                <button class="btn btn-danger" (click)="removeItem(item.id)" >Delete</button>
             </div>
           </div>
         </td>
@@ -67,6 +67,10 @@
       <button *ngIf="items1.length > 0" class="btn btn-success" type="submit">Submit</button>
     </div>
   </form>
+
+  <div class="button-container">
+    <button routerLink="/advisor-dashboard/advisorDashboard/advisorvehicle" routerLinkActive="active" class="text-center btn btn-primary" style="background-color: #673ab7;">Back</button>
+</div>
   
   
   
