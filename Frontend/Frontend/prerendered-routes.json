@@ -1,0 +1,19 @@
+{
+  "routes": [
+    "/admin-dashboard",
+    "/admin-dashboard/add-vehicles",
+    "/admin-dashboard/additem",
+    "/admin-dashboard/adminDashboard",
+    "/admin-dashboard/dashboard",
+    "/admin-dashboard/item",
+    "/admin-dashboard/service-done",
+    "/admin-dashboard/under-service",
+    "/admin-dashboard/vehicle-list",
+    "/advisor-dashboard",
+    "/advisor-dashboard/advisorDashboard",
+    "/advisor-dashboard/advisorDashboard/advisorvehicle",
+    "/forgetpassword",
+    "/login",
+    "/register"
+  ]
+}

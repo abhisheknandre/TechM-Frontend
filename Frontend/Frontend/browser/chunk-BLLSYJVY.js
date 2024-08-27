@@ -1,0 +1,1 @@
+import{M as i,Q as n}from"./chunk-LOTQL3CA.js";import{aa as e}from"./chunk-WDRBYQ32.js";var u=()=>{let r=e(n),t=e(i);if(r.isAuthenticated()){let o=r.getUserRole();return o==="ADMIN"||o==="SERVICEADVISOR"?!0:(t.navigate(["/login"]),!1)}else return t.navigate(["/login"]),!1};export{u as a};
